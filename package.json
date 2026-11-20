@@ -1,0 +1,51 @@
+{
+  "name": "vite-plugin-peisar",
+  "version": "1.0.0",
+  "description": "Vite plugin for Peisar",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "types": "dist/index.d.cts",
+  "module": "dist/index.mjs",
+  "exports": {
+    "./client": {
+      "types": "./client.d.ts"
+    },
+    ".": {
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "scripts": {
+    "lint": "biome check --write src",
+    "fmt": "biome format --write",
+    "build": "susee build"
+  },
+  "keywords": ["vite-plugin","peisar","markdown"],
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@biomejs/biome": "^2.6.8",
+    "@types/node": "^26.6.6",
+    "peisar": "^2.1.12",
+    "susee": "^3.0.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  },
+  "peerDependencies": {
+    "peisar": "^2.1.12",
+    "vite": "^8.3.8"
+  },
+  "files": [
+    "dist/**/*",
+    "LICENSE",
+    "README.md",
+    "package.json",
+    "client.d.ts"
+  ],
+  "publishConfig": {"access": "public"}
+}
