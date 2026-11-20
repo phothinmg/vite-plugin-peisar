@@ -27,7 +27,14 @@ export default defineConfig({
 });
 ```
 
-The plugin creates `vite-peisar-env.d.ts` in the project working directory if
+Create file `src/vite-peisar-env.d.ts` with following content:
+
+```ts
+/// <reference types="vite/client" />
+/// <reference types="vite-plugin-peisar/client" />
+```
+
+The plugin creates `vite-peisar-env.d.ts` in the project `src` directory if
 it does not already exist. This file adds Vite and Markdown module types for
 TypeScript.
 
