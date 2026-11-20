@@ -8,35 +8,34 @@ frontmatter as named exports.
 ## Install
 
 ```sh
-npm install vite vite-plugin-peisar peisar react
+npm install vite-plugin-peisar
 ```
-
-Your application also needs React's type declarations if it uses TypeScript and
-does not already include them.
 
 ## Configure Vite
 
 Add the plugin to your Vite configuration:
 
 ```ts
-import { defineConfig } from "vite";
-import { vitePluginPeisar } from "vite-plugin-peisar";
-
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
+import {vitePluginPeisar} from "vite-plugin-peisar";
+// https://vite.dev/config/
 export default defineConfig({
-  plugins: [vitePluginPeisar()],
-});
+  plugins: [react(),vitePluginPeisar()],
+})
 ```
 
-Create file `src/vite-peisar-env.d.ts` with following content:
+If you prefer to create the file manually, add `src/vite-peisar-env.d.ts` with
+the following content:
 
 ```ts
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-peisar/client" />
 ```
 
-The plugin creates `vite-peisar-env.d.ts` in the project `src` directory if
-it does not already exist. This file adds Vite and Markdown module types for
-TypeScript.
+Otherwise, the plugin creates `vite-peisar-env.d.ts` in the project's `src`
+directory if it does not already exist. This file provides TypeScript
+declarations for Vite and Markdown modules.
 
 ## Import Markdown
 
