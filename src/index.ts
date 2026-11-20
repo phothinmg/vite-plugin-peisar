@@ -62,7 +62,7 @@ function hashContent(content: string): string {
 }
 
 function writeDts() {
-	const filePath = path.resolve(process.cwd(), "vite-peisar-env.d.ts");
+	const filePath = path.resolve(process.cwd(), "src/vite-peisar-env.d.ts");
 	if (!fs.existsSync(filePath)) {
 		const txt = `/// <reference types="vite/client" />\n/// <reference types="vite-plugin-peisar/client" />`;
 		fs.writeFileSync(filePath, txt);
