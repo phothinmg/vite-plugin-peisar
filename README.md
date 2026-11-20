@@ -82,8 +82,6 @@ Pass an options object to `vitePluginPeisar(options)`:
 | `wrapperClass` | `string` | — | Set a CSS class on the generated React component's wrapper element. |
 | `cache` | `boolean` | `true` | Enable the persistent render cache in Vite's cache directory. |
 
-`.ron` files are recognized by default, but `.ron` is not currently included in
-the TypeScript type for custom `fileExtensions` values.
 
 For example, to disable the persistent cache and set a wrapper class:
 
